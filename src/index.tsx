@@ -1,20 +1,25 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
+
 import "./assets/styles/index.css";
+
+import 'antd/dist/antd.css'
+
 import { Provider } from "react-redux";
-import { FluentProvider, teamsLightTheme } from '@fluentui/react-components';
 
 import { store } from "./features/store";
+import { ConfigProvider } from 'antd';
+import frFR from 'antd/es/locale/fr_FR';
 
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
-  <FluentProvider>
+  <ConfigProvider locale={frFR}>
     <Provider store={store}>
       <App />
     </Provider>
-  </FluentProvider>,
+  </ConfigProvider>,
   document.getElementById("root"),
 );
 
